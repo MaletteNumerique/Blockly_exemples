@@ -1,0 +1,58 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="22" inline="true" x="82" y="104">
+    <field name="VAR">t</field>
+    <value name="VALUE">
+      <block type="grove_temperature_DHT11" id="561">
+        <field name="PIN">7</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if" id="75" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="104" inline="true">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="variables_get" id="126">
+                <field name="VAR">t</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="144">
+                <field name="NUM">28</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="servo_move" id="518" inline="false">
+            <value name="PIN">
+              <block type="math_number" id="456">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <value name="DEGREE">
+              <block type="math_number" id="519">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="servo_move" id="557" inline="false">
+            <value name="PIN">
+              <block type="math_number" id="558">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <value name="DEGREE">
+              <block type="math_number" id="559">
+                <field name="NUM">20</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
