@@ -1,0 +1,72 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="servo_move" id="120" inline="false" x="13" y="13">
+    <value name="PIN">
+      <block type="math_number" id="121">
+        <field name="NUM">3</field>
+      </block>
+    </value>
+    <value name="DEGREE">
+      <block type="math_arithmetic" id="157" inline="true">
+        <field name="OP">DIVIDE</field>
+        <value name="A">
+          <block type="inout_analog_read" id="139">
+            <field name="PIN">A0</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="158">
+            <field name="NUM">6</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="servo_move" id="178" inline="false">
+        <value name="PIN">
+          <block type="math_number" id="179">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+        <value name="DEGREE">
+          <block type="math_arithmetic" id="180" inline="true">
+            <field name="OP">DIVIDE</field>
+            <value name="A">
+              <block type="inout_analog_read" id="181">
+                <field name="PIN">A2</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="182">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="servo_move" id="183" inline="false">
+            <value name="PIN">
+              <block type="math_number" id="184">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <value name="DEGREE">
+              <block type="math_arithmetic" id="185" inline="true">
+                <field name="OP">DIVIDE</field>
+                <value name="A">
+                  <block type="inout_analog_read" id="186">
+                    <field name="PIN">A5</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="187">
+                    <field name="NUM">6</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

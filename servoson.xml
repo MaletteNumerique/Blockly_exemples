@@ -1,0 +1,43 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_if" id="1" inline="false" x="113" y="103">
+    <value name="IF0">
+      <block type="logic_compare" id="2" inline="true">
+        <field name="OP">GT</field>
+        <value name="A">
+          <block type="inout_analog_read" id="3">
+            <field name="PIN">A2</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="4">
+            <field name="NUM">650</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="servo_move" id="5" inline="false">
+        <value name="PIN">
+          <block type="math_number" id="6">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <value name="DEGREE">
+          <block type="math_arithmetic" id="7" inline="true">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <block type="inout_analog_read" id="8">
+                <field name="PIN">A2</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="9">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
